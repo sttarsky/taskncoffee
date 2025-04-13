@@ -1,13 +1,13 @@
 {
   "author": "Unnamed",
   "title": "Task&Coffee",
-  "date": "2025-03-27T21:10:04.996Z",
+  "date": "2025-04-13T20:32:14.768Z",
   "tables": [
     {
       "id": 0,
       "name": "Users",
-      "x": -104.8410100000001,
-      "y": -43.33970937500004,
+      "x": -197.2194850000002,
+      "y": 108.59857187500006,
       "fields": [
         {
           "name": "id",
@@ -94,8 +94,8 @@
     {
       "id": 1,
       "name": "Tasks",
-      "x": 229,
-      "y": 65,
+      "x": 359.95364004739827,
+      "y": 95.38765625000008,
       "fields": [
         {
           "name": "id",
@@ -237,8 +237,8 @@
     {
       "id": 2,
       "name": "Tags",
-      "x": 698,
-      "y": 533,
+      "x": 920.4376437500002,
+      "y": 368.90665624999997,
       "fields": [
         {
           "name": "id",
@@ -338,8 +338,8 @@
     {
       "id": 4,
       "name": "Task_Assignees",
-      "x": 287,
-      "y": 560,
+      "x": 649.2208625000001,
+      "y": 555.137975,
       "fields": [
         {
           "name": "id",
@@ -382,6 +382,67 @@
       "indices": [],
       "color": "#7d9dff",
       "key": 1742204065899
+    },
+    {
+      "id": 5,
+      "name": "Comments",
+      "x": 85.14274611544158,
+      "y": -130.41751984174218,
+      "fields": [
+        {
+          "name": "id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": "",
+          "id": 0
+        },
+        {
+          "name": "task_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 1
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 2
+        },
+        {
+          "name": "comment",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": "",
+          "id": 3,
+          "size": 65535
+        }
+      ],
+      "comment": "",
+      "indices": [],
+      "color": "#175e7a",
+      "key": 1744576052508
     }
   ],
   "relationships": [
@@ -428,6 +489,28 @@
       "deleteConstraint": "Cascade",
       "name": "Tasks_id_fk",
       "id": 3
+    },
+    {
+      "startTableId": 0,
+      "startFieldId": 0,
+      "endTableId": 5,
+      "endFieldId": 2,
+      "cardinality": "One to many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "Users_id_fk",
+      "id": 4
+    },
+    {
+      "startTableId": 1,
+      "startFieldId": 0,
+      "endTableId": 5,
+      "endFieldId": 1,
+      "cardinality": "One to many",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "name": "Tasks_id_fk",
+      "id": 5
     }
   ],
   "notes": [],
